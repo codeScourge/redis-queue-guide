@@ -48,7 +48,7 @@ conn = Redis()
 q = Queue("default", connection=conn)
 
 job = q.enqueue(testFunction,
-                args=(5))
+                5)
 ```
 
 Here we first import our redis, and rq package, as well as our own function. By running *Redis()* We can connect to a redis server on a specific adress and port, however since we run it locally, we can just leave it empty and use the default parameters. next we create a queue called "default" into which we insert our function (the 5 is the input to the function, in this case it is the time it should wait. If you have multiple inputs, you just add another one, separated by a comma, f.e. (testFunction, 5, "hello", [1, 3, 4])).This will return the job, from which we can extract information like the job-id, -state, and more. If you now open the terminal window with the worker running you should see the print statements of our function.
