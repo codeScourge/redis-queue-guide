@@ -58,6 +58,6 @@ Here we first import our redis, and rq package, as well as our own function. By 
 ## debugging
 1. If you get an error message while running the command and this isn't your first time using redis, theres a good chance you have a server running in the background and blcoking the port. Try running ```redis-cli shutdown```
 
-2.  If you get "ValueError: Invalid attribute name: <function path>", usually your package is not being imported correctly. Another bug that I personally experienced and which motivated me to make this repo is using the built in mac terminal, which yielded me the error for no reason. If you encounter this, try running both the main.py and the worker in f.e. the builtin vscode terminal and use the same virtual environment for both.
+2.  If you get "ValueError: Invalid attribute name: <function path>", usually your package is not being imported correctly. Another bug that I personally experienced and which motivated me to make this repo is using the built in mac terminal, which yielded me the error for no reason. If you encounter this, try running both the main.py and the worker in f.e. the builtin vscode terminal and use the same virtual environment for both. Also make sure that when you are calling rq worker, your working directory is where your main python file and module is located.
 
 More bugs or solutions? Add a pull request or message me!
